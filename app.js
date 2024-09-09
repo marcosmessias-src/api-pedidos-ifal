@@ -8,6 +8,7 @@ const pedidoRoutes = require('./routes/pedidoRoutes');
 const itemPedidoRoutes = require('./routes/itemPedidoRoutes');
 const comandaRoutes = require('./routes/comandaRoutes');
 const produtoRoutes = require('./routes/produtoRoutes');
+const pagamentoRoutes = require('./routes/pagamentoRoutes');
 
 const app = express();
 
@@ -19,6 +20,7 @@ app.use('/pedidos', pedidoRoutes);
 app.use('/itemPedidos', itemPedidoRoutes);
 app.use('/comandas', comandaRoutes);
 app.use('/produtos', produtoRoutes);
+app.use('/pagamentos', pagamentoRoutes);
 
 // Sincronizar banco de dados e iniciar servidor
 sequelize.sync()
