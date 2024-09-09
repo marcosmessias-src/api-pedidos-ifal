@@ -74,6 +74,8 @@ A API fornece as seguintes funcionalidades para cada entidade:
 
 Para facilitar o teste dos endpoints da API, você pode importar a coleção do Postman através do link abaixo:
 
+[Coleção do Postman](https://github.com/marcosmessias-src/api-pedidos-ifal/blob/main/postman-collection.json)
+
 Esse coleção permite importar todos os endpoints configurados para testes diretamente no Postman, facilitando a interação com a API.
 
 ## Conclusão
