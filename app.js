@@ -2,9 +2,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const sequelize = require('./config/database');
 
-// Import routes
+// Importar rotas
 const clienteRoutes = require('./routes/clienteRoutes');
-
+const pedidoRoutes = require('./routes/pedidoRoutes');
+const itemPedidoRoutes = require('./routes/itemPedidoRoutes');
 
 const app = express();
 
@@ -12,12 +13,14 @@ app.use(bodyParser.json());
 
 // Rotas
 app.use('/clientes', clienteRoutes);
+app.use('/pedidos', pedidoRoutes);
+app.use('/itemPedidos', itemPedidoRoutes);
 
 // Sincronizar banco de dados e iniciar servidor
 sequelize.sync()
     .then(() => {
         app.listen(3000, () => {
-            console.log('Server is running on port 3000');
+            console.log('Servidor rodando na porta 3000');
         });
     })
-    .catch(error => console.log('Error syncing database:', error));
+    .catch(error => console.log('Erro ao sincronizar o banco de dados:', error));
